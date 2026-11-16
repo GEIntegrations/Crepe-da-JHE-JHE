@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#241a2d">
+  <meta name="description" content="The Crepe Gourmet — crepes tradicionais e gourmet feitos com carinho. Peça pelo WhatsApp.">
+  <title>CREPE DA JHE JHE | Cardápio e pedidos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Cabeçalho e navegação principal -->
+  <header class="site-header">
+    <a class="brand" href="#inicio" aria-label="The Crepe Gourmet - início">
+      <img src="crepe_da_jhe_jhe_transparente.png" alt="CREPE da JHE JHE">
+      <span><strong>Crepe da</strong><small>JHE JHE</small></span>
+    </a>
+    <nav class="main-nav" aria-label="Navegação principal">
+      <a href="#cardapio">Cardápio</a>
+      <a href="#monte">Monte o seu</a>
+      <a href="#localizacao">Localização</a>
+    </nav>
+    <button class="cart-button" id="open-cart" type="button">
+      <span aria-hidden="true">🛍</span> Meu pedido <b id="cart-count">0</b>
+    </button>
+  </header>
+
+  <main>
+    <!-- Banner de apresentação -->
+    <section class="hero" id="inicio">
+      <div class="hero-content">
+        <span class="eyebrow">FEITO NA HORA • FEITO COM CARINHO</span>
+        <h1>Seu momento merece<br><em>um crepe especial.</em></h1>
+        <p>Do tradicional ao gourmet: escolha seus sabores favoritos e peça sem sair de casa.</p>
+        <a class="primary-button" href="#cardapio">Ver cardápio <span>→</span></a>
+        <div class="hero-details"><span>✦ Ingredientes selecionados</span><span>✦ Preparado na hora</span></div>
+      </div>
+      <div class="hero-art" aria-label="Destaque Crepe da JHE JHE">
+        <div class="hero-orbit orbit-one"></div><div class="hero-orbit orbit-two"></div>
+        <div class="hero-stamp"><img src="crepe_da_jhe_jhe_transparente.png" alt=""></div>
+        <div class="hero-price"><small>CREPES GOURMET</small><strong>R$ 24,99</strong></div>
+      </div>
+    </section>
+
+    <!-- Faixa com os principais preços -->
+    <section class="price-strip" aria-label="Preços">
+      <div><small>TRADICIONAIS</small><strong>R$ 14,99</strong></div>
+      <span class="strip-divider"></span>
+      <div><small>MONTE O SEU</small><strong>R$ 17,99</strong></div>
+      <span class="strip-divider"></span>
+      <div><small>GOURMET</small><strong>R$ 24,99</strong></div>
+    </section>
+
+    <!-- Catálogo gerado pelo JavaScript a partir dos sabores do cardápio -->
+    <section class="menu-section section-wrap" id="cardapio">
+      <div class="section-heading">
+        <div><span class="eyebrow">ESCOLHA SEU FAVORITO</span><h2>Nosso cardápio</h2></div>
+        <p>Temos uma combinação perfeita esperando por você.</p>
+      </div>
+      <div class="filter-row" role="group" aria-label="Filtrar cardápio">
+        <button class="filter-chip active" data-filter="todos">Todos</button>
+        <button class="filter-chip" data-filter="tradicional">Tradicionais</button>
+        <button class="filter-chip" data-filter="gourmet">Gourmet</button>
+        <button class="filter-chip" data-filter="doce">Doces</button>
+        <button class="filter-chip" data-filter="salgado">Salgados</button>
+      </div>
+      <div id="menu-grid" class="menu-grid"></div>
+    </section>
+
+    <!-- Área de personalização do crepe tradicional -->
+    <section class="custom-section" id="monte">
+      <div class="section-wrap custom-layout">
+        <div>
+          <span class="eyebrow">DO SEU JEITO</span>
+          <h2>Monte o seu<br><em>crepe tradicional</em></h2>
+          <p>Escolha os ingredientes e crie uma combinação do seu jeito.</p>
+          <div class="custom-price">R$ 17,99 <small>por crepe</small></div>
+        </div>
+        <div class="custom-builder">
+          <h3>Escolha os ingredientes</h3>
+          <p class="helper">Selecione os itens que deseja incluir.</p>
+          <div id="ingredient-list" class="ingredient-list"></div>
+          <label class="select-label" for="custom-cheese">Finalize com</label>
+          <select id="custom-cheese"><option value="Catupiry">Catupiry</option><option value="Cheddar">Cheddar</option></select>
+          <button class="primary-button full-button" id="add-custom" type="button">Adicionar ao pedido — R$ 17,99</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Informações de entrega e embalagem -->
+    <section class="info-cards section-wrap">
+      <article><span>🛍️</span><h3>Vai levar?</h3><p>Em pedidos para viagem, acrescentamos <strong>R$ 2,00</strong> referente à embalagem.</p></article>
+      <article><span>👩‍🍳</span><h3>Feito na hora</h3><p>Seu crepe é preparado com cuidado, para chegar gostoso até você.</p></article>
+      <article><span>💬</span><h3>Pedido fácil</h3><p>Monte seu pedido aqui e envie tudo organizado diretamente pelo WhatsApp.</p></article>
+    </section>
+
+    <!-- Endereço e mapa -->
+    <section class="location-section" id="localizacao">
+      <div class="section-wrap location-layout">
+        <div><span class="eyebrow">VENHA NOS VISITAR</span><h2>Estamos pertinho<br><em>de você.</em></h2>
+          <p class="address-line">📍 QNN 35 Conjunto A, Casa 36<br>Ceilândia — DF</p>
+          <a class="outline-button" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=QNN+35+Conjunto+A+Casa+36+Ceilandia+DF">Abrir no Google Maps ↗</a>
+        </div>
+        <div class="map-frame">
+          <iframe title="Mapa de localização The Crepe Gourmet" src="https://www.google.com/maps?q=QNN%2035%20Conjunto%20A%20Casa%2036%20Ceil%C3%A2ndia%20DF&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Rodapé -->
+  <footer class="site-footer">
+    <a class="brand footer-brand" href="#inicio"><img src="images/logo-crepe.png" alt=""><span><strong>The Crepe</strong><small>GOURMET</small></span></a>
+    <p>Um crepe, muitos motivos para sorrir. ♥</p>
+    <small>© <span id="year"></span> The Crepe Gourmet. Todos os direitos reservados.</small>
+  </footer>
+
+  <!-- Carrinho lateral: os itens são inseridos dinamicamente pelo JavaScript -->
+  <div class="drawer-backdrop" id="drawer-backdrop"></div>
+  <aside class="cart-drawer" id="cart-drawer" aria-label="Seu pedido" aria-hidden="true">
+    <div class="drawer-header"><div><span class="eyebrow">SEU PEDIDO</span><h2>Minha sacola</h2></div><button class="icon-button" id="close-cart" aria-label="Fechar carrinho">✕</button></div>
+    <div id="cart-items" class="cart-items"><p class="empty-cart">Sua sacola está vazia. Escolha um crepe delicioso!</p></div>
+    <div class="cart-summary">
+      <label class="packaging-option"><input type="checkbox" id="packaging"> Pedido para viagem (+ R$ 2,00)</label>
+      <div class="total-row"><span>Subtotal</span><strong id="subtotal">R$ 0,00</strong></div>
+      <div class="total-row"><span>Embalagem</span><strong id="packaging-value">R$ 0,00</strong></div>
+      <div class="total-row grand-total"><span>Total</span><strong id="total">R$ 0,00</strong></div>
+      <button class="primary-button full-button" id="go-checkout" type="button" disabled>Continuar pedido →</button>
+    </div>
+  </aside>
+
+  <!-- Janela de finalização: nome, contato, endereço, pagamento e observações -->
+  <div class="modal-backdrop" id="checkout-modal">
+    <section class="checkout-modal" role="dialog" aria-modal="true" aria-labelledby="checkout-title">
+      <div class="drawer-header"><div><span class="eyebrow">SÓ MAIS UM PASSO</span><h2 id="checkout-title">Finalizar pedido</h2></div><button class="icon-button" id="close-checkout" aria-label="Fechar">✕</button></div>
+      <form id="checkout-form">
+        <label>Seu nome<input name="name" required maxlength="70" placeholder="Como podemos te chamar?"></label>
+        <label>Telefone para contato<input name="phone" required inputmode="tel" placeholder="(61) 99999-9999"></label>
+        <label>Tipo de pedido<select name="delivery" id="delivery"><option value="Retirada no local">Retirada no local</option><option value="Entrega">Entrega (combinar pelo WhatsApp)</option></select></label>
+        <label id="address-field" class="hidden">Endereço para entrega<input name="address" placeholder="Rua, número, complemento e bairro"></label>
+        <label>Forma de pagamento<select name="payment" id="payment" required><option value="Pix">Pix</option><option value="Dinheiro">Dinheiro</option><option value="Cartão na entrega/retirada">Cartão na entrega/retirada</option><option value="Pagamento online (Mercado Pago)">Pagamento online (Mercado Pago)</option></select></label>
+        <label id="change-field" class="hidden">Troco para quanto?<input name="change" placeholder="Ex.: R$ 50,00"></label>
+        <label>Observações<textarea name="notes" rows="3" placeholder="Alguma preferência ou detalhe do pedido?"></textarea></label>
+        <div class="checkout-total"><span>Total do pedido</span><strong id="checkout-total">R$ 0,00</strong></div>
+        <p class="payment-note" id="payment-note">Ao enviar, você receberá as orientações para pagamento via Pix pelo WhatsApp.</p>
+        <button class="primary-button full-button" type="submit" id="submit-order">Enviar pedido pelo WhatsApp ↗</button>
+        <button class="mp-button full-button hidden" type="button" id="pay-online">Pagar online com Mercado Pago</button>
+        <small class="secure-note">O pagamento online só aparece quando a loja configurar sua conta do Mercado Pago.</small>
+      </form>
+    </section>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
